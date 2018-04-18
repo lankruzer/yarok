@@ -1,8 +1,7 @@
 <p><strong>Added plagins:</strong>
 <ul>
 	<li>Sourcemaps</li>
-	<li></li>
-	<li></li>
+	<li>gulp-include-html</li>
 </ul>
 
 <h1><strong>OptimizedHTML 4:</strong> <br>Startup HTML template based on Gulp & Bootstrap 4</h1>
@@ -27,6 +26,14 @@
 	<li><a href="https://github.com/agragregra/OptimizedHTML-4/archive/master.zip">Download</a> <strong>OptimizedHTML 4</strong> from GitHub;</li>
 	<li>Install Node Modules: <strong>npm i</strong>;</li>
 	<li>Run the template: <strong>gulp</strong>.</li>
+	<li>To add html template: <br>
+       @@include('./_value.html' , {
+            contents:'I am so smart'
+       })
+       
+       in file template:
+       <pre><span><%= contents%></span></pre>
+	</li>
 </ol>
 
 <h2>Gulp tasks:</h2>
