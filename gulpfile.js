@@ -10,7 +10,9 @@ var gulp          = require('gulp'),
 		rename        = require('gulp-rename'),
 		autoprefixer  = require('gulp-autoprefixer'),
 		notify        = require("gulp-notify"),
-		rsync         = require('gulp-rsync');
+		rsync         = require('gulp-rsync'),
+		sourcemaps    = require('gulp-sourcemaps'),
+		gih 		  = require("gulp-include-html");
 
 gulp.task('browser-sync', function() {
 	browsersync({
@@ -26,10 +28,12 @@ gulp.task('browser-sync', function() {
 
 gulp.task('styles', function() {
 	return gulp.src('app/'+syntax+'/**/*.'+syntax+'')
+	.pipe(sourcemaps.init())
 	.pipe(sass({ outputStyle: 'expand' }).on("error", notify.onError()))
 	.pipe(rename({ suffix: '.min', prefix : '' }))
 	.pipe(autoprefixer(['last 15 versions']))
 	.pipe(cleancss( {level: { 1: { specialComments: 0 } } })) // Opt., comment out when debugging
+	.pipe(sourcemaps.write('.'))
 	.pipe(gulp.dest('app/css'))
 	.pipe(browsersync.reload( {stream: true} ))
 });
@@ -43,6 +47,17 @@ gulp.task('js', function() {
 	// .pipe(uglify()) // Mifify js (opt.)
 	.pipe(gulp.dest('app/js'))
 	.pipe(browsersync.reload({ stream: true }))
+});
+
+gulp.task('build-html' , function(){
+	return gulp.src("./app/html/**/*.html")
+		.pipe(gih({
+			'public':"./public/bizapp",
+
+			baseDir:'./html/modules/',
+			ignore:'\/modules\/'
+			}))
+		.pipe(gulp.dest("./app/"));
 });
 
 gulp.task('rsync', function() {
@@ -60,7 +75,8 @@ gulp.task('rsync', function() {
 	}))
 });
 
-gulp.task('watch', ['styles', 'js', 'browser-sync'], function() {
+gulp.task('watch', ['build-html', 'styles', 'js', 'browser-sync'], function() {
+	gulp.watch('app/**/*.html', ['build-html']);
 	gulp.watch('app/'+syntax+'/**/*.'+syntax+'', ['styles']);
 	gulp.watch(['libs/**/*.js', 'app/js/common.js'], ['js']);
 	gulp.watch('app/*.html', browsersync.reload)

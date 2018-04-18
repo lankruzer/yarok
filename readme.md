@@ -1,3 +1,10 @@
+<p><strong>Added plagins:</strong>
+<ul>
+	<li>Sourcemaps</li>
+	<li></li>
+	<li></li>
+</ul>
+
 <h1><strong>OptimizedHTML 4:</strong> <br>Startup HTML template based on Gulp & Bootstrap 4</h1>
 
 <p>
