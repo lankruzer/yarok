@@ -1,0 +1,69 @@
+.screen-service-slider
+	.slick-list,
+	.slick-track,
+	&.slider-full-width,
+	.slider-full-width-slide,
+	.slider-full-width-slide__img
+		height: calc(100vh - 105px)
+		max-height: 540px
+		min-height: 320px
+
+	.slider-full-width
+		&-slide
+			text-align: center
+			&__img
+				display: inline-block
+				object-fit: cover
+				width: 100%
+
+	.slick-dots
+		bottom: 25px
+
++media-breakpoint-down(xl)
+	.screen-service-slider
+		.slick-list,
+		.slick-track,
+		&.slider-full-width,
+		.slider-full-width-slide,
+		.slider-full-width-slide__img
+			height: calc(100vh - 90px)
+			max-height: 500px
+
++media-breakpoint-down(lg)
+	.screen-service-slider
+		.slick-list,
+		.slick-track,
+		&.slider-full-width,
+		.slider-full-width-slide,
+		.slider-full-width-slide__img
+			height: calc(100vh - 70px)
+			max-height: 460px
+
++media-breakpoint-down(md)
+	.screen-service-slider
+		.slick-list,
+		.slick-track,
+		&.slider-full-width,
+		.slider-full-width-slide,
+		.slider-full-width-slide__img
+			max-height: 430px
+
++media-breakpoint-down(sm)
+	.screen-service-slider
+		.slick-list,
+		.slick-track,
+		&.slider-full-width,
+		.slider-full-width-slide,
+		.slider-full-width-slide__img
+			height: calc(100vh - 50px)
+			max-height: 400px
+
++media-breakpoint-down(xs)
+	.screen-service-slider
+		.slick-list,
+		.slick-track,
+		&.slider-full-width,
+		.slider-full-width-slide,
+		.slider-full-width-slide__img
+			height: calc(100vh - 50px)
+			max-height: 360px
