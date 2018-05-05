@@ -1,0 +1,53 @@
+.block-form
+	&-form
+		margin: 0 auto 45px
+		width: 40%
+
+		.row
+			margin:
+				left: -15px
+				right: -15px
+
+		[class*='col-']
+			padding:
+				left: 15px
+				right: 15px
+
+		label
+			margin-bottom: 15px
+
+		.input
+			width: 100%
+			font-size: 18px
+
+		.btn
+			padding: 6px 16px
+
++media-breakpoint-down(xl)
+	.block-form-form
+		margin: 0 auto 40px
+		width: 45%
+
++media-breakpoint-down(lg)
+	.block-form-form
+		margin: 0 auto 35px
+		width: 50%
+
++media-breakpoint-down(md)
+	.block-form-form
+		margin: 0 auto 30px
+		width: 55%
+
++media-breakpoint-down(sm)
+	.block-form-form
+		margin: 0 auto 25px
+		width: 65%
+
++media-breakpoint-down(xs)
+	.block-form-form
+		margin: 0 auto 20px
+		width: 100%
+
+		.btn
+			min-width: 216px
+			width: auto

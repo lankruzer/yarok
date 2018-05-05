@@ -1,0 +1,58 @@
+.footer
+	margin:
+		top: auto
+		bottom: 0
+
+.footer-nav
+	background-color: $gray
+
+	&-list
+		margin: 0
+		padding: 25px 0
+		list-style: none
+
+		&-li
+			display: flex
+			align-items: center
+
+			&:not(:last-of-type)::after
+				content: '|'
+				display: inline-block
+				margin: auto 10px
+
+			&__link
+				display: block
+				font-size: 18px
+				font-weight: 500
+				color: $text-dark
+				transition: .25s
+				&:hover
+					color: darken($text-dark, 20)
+					text-decoration: underline
+
+			&_active .footer-nav-list-li__link
+				color: darken($text-dark, 20)
+				text-decoration: underline
+
++media-breakpoint-down(xl)
+	.footer-nav-list
+		padding: 20px 0
+
++media-breakpoint-down(lg)
+	.footer-nav-list
+		padding: 18px 0
+
++media-breakpoint-down(md)
+	.footer-nav-list
+		padding: 15px 0
+
++media-breakpoint-down(sm)
+	.footer-nav-list
+		padding: 13px 0
+
++media-breakpoint-down(xs)
+	.footer-nav-list
+		padding: 10px 0
+		&-li__link
+			font-size: 16px
+

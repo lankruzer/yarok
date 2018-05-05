@@ -1,7 +1,16 @@
 @@include('./modules/_head.html' , { title:'Clean page'})
 
-@@include('./modules/_header.html' , {})
+<!-- Add class 'header_always-fixed' to '.header' if need use always fixed header -->
+@@include('./modules/_header.html' , { alwaysFixed: 'header_always-fixed'})
 
-<h1>Clean page</h1>
+<main class="main main_padding-top">
+	<div class="container-1200">
+
+		<h1 class="title title_lines">
+			<span class="title__text">Clean page</span>
+		</h1>
+
+	</div>
+</main>
 
 @@include('./modules/_footer.html' , { title:'Index'})

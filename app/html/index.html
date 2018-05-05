@@ -1,8 +1,9 @@
 @@include('./modules/_head.html' , { title:'Index'})
 
-@@include('./modules/_header.html' , {})
+<!-- Add class 'header_always-fixed' to '.header' if need use always fixed header -->
+@@include('./modules/_header.html' , { alwaysFixed: ''})
 
-<main>
+<main class="main">
 
 	<div class="index-main-screen">
 
@@ -86,7 +87,7 @@
 
 			<div class="container-1200">
 
-				<div class="row  d-flex flex-wrap justify-content-center">
+				<div class="row  d-flex flex-wrap justify-content-around">
 					<article class="block-services-service col-12 col-sm-6 col-md-4">
 						<h2 class="block-services-service-title">
 							<a href="service.html" class="block-services-service-title__link">גינות גג</a>
@@ -150,20 +151,76 @@
 
 			<ul class="reviews">
 				<li class="reviews-li">
-					<img src="img/index-review-1.jpg" class="reviews-li__img" alt="">
-					<div class="reviews-li-info">
-						<div class="reviews-li-info__text">
-							<p>שיתוף פעולה נהדרעם ירוק גינון אורבני.</p>
-							<p>המשיכו כך !</p>
+					<div class="reviews-li__wrapper">
+						<img src="img/index-review-1.jpg" class="reviews-li__img" alt="">
+						<div class="reviews-li-info">
+							<div class="reviews-li-info__text">
+								<p>שיתוף פעולה נהדרעם ירוק גינון אורבני.</p>
+								<p>המשיכו כך !</p>
+							</div>
+							<hr class="reviews-li-info__hr">
+							<div class="reviews-li-info__author">
+								<p>משה צור,</p>
+								<p>אדריכל ובונה ערים</p>
+							</div>
 						</div>
-						<hr class="reviews-li-info__hr">
-						<div class="reviews-li-info__author">
-							<p>משה צור,</p>
-							<p>אדריכל ובונה ערים</p>
+					</div>
+				</li>
+
+				<li class="reviews-li">
+					<div class="reviews-li__wrapper">
+						<img src="img/index-review-2.jpg" class="reviews-li__img" alt="">
+						<div class="reviews-li-info">
+							<div class="reviews-li-info__text">
+								<p>תודה רבה לירוק גינון אורבנישעיצבו לי גג לתפארת מדינת ישראל...</p>
+							</div>
+							<hr class="reviews-li-info__hr">
+							<div class="reviews-li-info__author">
+								<p>חנה לסלאו,</p>
+								<p>שחקנית ויוצרת</p>
+							</div>
+						</div>
+					</div>
+				</li>
+
+				<li class="reviews-li">
+					<div class="reviews-li__wrapper">
+						<img src="img/index-review-3.jpg" class="reviews-li__img" alt="">
+						<div class="reviews-li-info">
+							<div class="reviews-li-info__text">
+								<p>עברו כבר יותר מ 5 שנים מהקמת הגינה. תהליך העבודה המשותף היה מקצועי ונעים, הגינה תוכננה עם מחשבה ארוכת טווח ואנחנו נהנים מדי יום מכך
+								</p>
+							</div>
+							<hr class="reviews-li-info__hr">
+							<div class="reviews-li-info__author">
+								<p>ליאת לוקסנבורג, </p>
+								<p>אדריכלית</p>
+							</div>
+						</div>
+					</div>
+				</li>
+
+				<li class="reviews-li">
+					<div class="reviews-li__wrapper">
+						<img src="img/index-review-4.jpg" class="reviews-li__img" alt="">
+						<div class="reviews-li-info">
+							<div class="reviews-li-info__text">
+								<p>יחס אישי... </p>
+								<p>אכפתיות ומקצועיות...</p>
+								<p>תודה רבה</p>
+							</div>
+							<hr class="reviews-li-info__hr">
+							<div class="reviews-li-info__author">
+								<p>ד"ר עידית אוריון</p>
+							</div>
 						</div>
 					</div>
 				</li>
 			</ul>
+			
+			<div class="reviews-link">
+				<a href="reviews.html" class="btn btn_small">לקוחות נוספים ></a>
+			</div>
 
 		</div>
 	</section>
