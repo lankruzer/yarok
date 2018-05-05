@@ -1,11 +1,25 @@
-$default-font: "roboto-example", sans-serif
-$accent: orange
-$text: #333
+$default-font: "Heebo", sans-serif
+$text-dark: #393b33
+$text-light: #ffffff
+$text-medium: #dae1c8
+$dark: #3a3e2f
+$accent: #cfdede
 
 // Customization Bootstrap vars from "app/libs/bootstrap/scss/_variables.scss"
 $grid-gutter-width: 30px
+//$grid-gutter-width: 50px
 $grid-columns: 12
-$grid-breakpoints: (xs: 0, sm: 576px, md: 768px, lg: 992px, xl: 1200px)
-$container-max-widths: (sm: 540px, md: 720px, lg: 960px, xl: 1140px)
+$grid-breakpoints: (xs: 0, sm: 576px, md: 768px, lg: 992px, xl: 1200px, xxl: 1400px)
+$container-max-widths: (sm: 540px, md: 720px, lg: 960px, xl: 1140px, xxl: 1340px)
 
 $gutter: $grid-gutter-width
+
+@media (min-width: map-get($grid-breakpoints, xxl))
+	[class*="col-"],
+	[class*="container"]
+		padding-right: 25px
+		padding-left: 25px
+
+	[class*="row"]
+		margin-right: -25px
+		margin-left: -25px

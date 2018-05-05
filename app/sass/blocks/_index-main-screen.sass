@@ -1,0 +1,155 @@
+.index-main-screen
+	position: relative
+	min-height: 100vh
+	box-sizing: border-box
+	padding: 100px 0 60px
+	display: flex
+	align-items: center
+
+
+	.container-fluid
+		position: relative
+		z-index: 5
+		flex-direction: row-reverse
+		width: 100%
+		height: auto
+		box-sizing: border-box
+
+	&__logo
+		position: absolute
+		top: 50%
+		left: 50%
+		z-index: 5
+		display: flex
+		justify-content: center
+		align-items: center
+		width: 450px
+		height: 450px
+		text-align: center
+		transform: translate(-50%, -50%)
+		background-image: radial-gradient(circle, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.1), transparent,  transparent)
+		img
+			width: auto
+			max-width: 100%
+			height: auto
+			max-height: 180px
+
+	&__link-to
+		position: absolute
+		bottom: 5px
+		left: 50%
+		z-index: 5
+		width: 50px
+		height: 50px
+		box-sizing: border-box
+		border:
+			right: 5px solid $text-light
+			bottom: 5px solid $text-light
+		transform-origin: center
+		transform: translate(-50%, -50%) rotate(45deg)
+		transition: .25s
+		animation-name: up-down
+		animation-duration: 1.5s
+		animation-iteration-count: infinite
+		&:hover
+			border-color: $accent
+
+	.slider-full-width
+		position: absolute
+		top: 0
+		left: 0
+		width: 100%
+		height: 100%
+		&-slide
+			height: 100%
+			&__img
+				min-height: 100vh
+				height: 100%
+				width: 100%
+				object-fit: cover
+
+		.slick-list,
+		.slick-track
+			height: 100%
+
+.form-bg
+	padding: 35px 20px
+	width: 252px
+	box-sizing: border-box
+	text-align: center
+	background-origin: padding-box
+	background: transparentize($text-light, .8) url('../img/form-bg.jpg') center no-repeat
+	background-size: cover
+	border: 4px solid rgba(255, 255, 255, 0.902)
+	box-shadow: inset 0 0 3px 0px $accent
+
+	&__title
+		display: block
+		margin-bottom: 5px
+		padding-bottom: 25px
+		font-size: 27px
+		line-height: 31px
+		font-weight: 400
+		letter-spacing: 0.4px
+		background: url('../img/form-decor.png') center bottom no-repeat
+		background-size: 100%
+
+	&__text
+		margin: 0 0 10px
+		font-size: 22px
+		line-height: 1.1
+
+	.input,
+	.input_textarea
+		margin-bottom: 15px
+		width: 100%
+
+	.btn
+		margin-bottom: 15px
+		width: 100%
+
+	&-link__text
+		font-size: 20px
+	&-link__link
+		font-size: 28px
+		line-height: 28px
+		font-weight: 700
+		color: $dark
+		&:hover
+			color: darken($dark, 20)
+
++media-breakpoint-down(xl)
+	.index-main-screen
+		padding: 100px 0 60px
+
++media-breakpoint-down(md)
+	.index-main-screen__logo
+		width: 250px
+		height: 250px
+		background-image: radial-gradient(circle, rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.2), transparent,  transparent)
+
++media-breakpoint-down(sm)
+	.index-main-screen
+		height: 100vh
+		min-height: 320px
+		&__logo
+			width: 100%
+			height: 100%
+			img
+				max-width: 300px
+
+		.form-bg
+			display: none
+
+		&__link-to
+			width: 30px
+			height: 30px
+
+
+@keyframes up-down
+	0%
+		bottom: 5px
+	50%
+		bottom: 0
+	100%
+		bottom: 5px
